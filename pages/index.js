@@ -1,209 +1,190 @@
-import Head from 'next/head'
+import React, { Fragment } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+
+import Image from 'next/image'
+import { Container, CssBaseline, Grid, Link } from '@material-ui/core';
+import Card from '../components/funcionalidades/card';
+
+const useStyles = makeStyles((theme) => ({
+  '@global': {
+    ul: {
+      margin: 0,
+      padding: 0,
+      listStyle: 'none',
+    },
+  },
+  appBar: {
+    borderBottom: `1px solid ${theme.palette.divider}`,
+  },
+  toolbar: {
+    flexWrap: 'wrap',
+  },
+  toolbarTitle: {
+    flexGrow: 1,
+  },
+  link: {
+    margin: theme.spacing(1, 1.5),
+  },
+  heroContent: {
+    padding: theme.spacing(8, 0, 6),
+  },
+  cardHeader: {
+    backgroundColor:
+      theme.palette.type === 'light' ? theme.palette.grey[200] : theme.palette.grey[700],
+  },
+  cardPricing: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'baseline',
+    marginBottom: theme.spacing(2),
+  },
+  footer: {
+    borderTop: `1px solid ${theme.palette.divider}`,
+    marginTop: theme.spacing(8),
+    paddingTop: theme.spacing(3),
+    paddingBottom: theme.spacing(3),
+    [theme.breakpoints.up('sm')]: {
+      paddingTop: theme.spacing(6),
+      paddingBottom: theme.spacing(6),
+    },
+  },
+}));
 
 export default function Home() {
+  const classes = useStyles();
+
   return (
-    <div className="container">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <Fragment>
+      <CssBaseline />
+      <AppBar position="static" color="default" elevation={0} className={classes.appBar}>
+        <Toolbar className={classes.toolbar}>
 
-      <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+          <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>
+            <Image src="/logo/meets.png" height={30} width={100} />
+          </Typography>
+          <nav>
+            <Link variant="button" color="textPrimary" href="#" className={classes.link}>
+              HOME
+            </Link>
+            <Link variant="button" color="textPrimary" href="#" className={classes.link}>
+              INTEGRAÇÕES
+            </Link>
+            <Link variant="button" color="textPrimary" href="#" className={classes.link}>
+              PLANOS
+            </Link>
+            <Link variant="button" color="textPrimary" href="#" className={classes.link}>
+              BLOG
+            </Link>
+            <Link variant="button" color="textPrimary" href="#" className={classes.link}>
+              SUPORTE
+            </Link>
+          </nav>
+          <Button href="/login" color="primary" variant="outlined" className={classes.link}>
+            Login
+          </Button>
+        </Toolbar>
+      </AppBar>
+      <Container maxWidth="lg" >
+        <Grid container alignItems="center" justifyContent="center" spacing={20} style={{ marginTop: 50 }} >
+          <Grid item xs={12} md={6}>
+            <Typography variant="h3" style={{ marginBottom: 25 }} >
+              Simplifique e aumente suas vendas com Meets CRM
+            </Typography>
+            <Typography variant="body1" style={{ marginBottom: 25 }} >
+              Torne suas vendas mais simples e práticas. Acompanhe as atividades certas a serem realizadas. Gestão de leads sem esforço enquanto aumenta sua taxa de conversão de vendas.
+            </Typography>
+            <Button variant="contained" color="primary" >
+              TESTE GRÁTIS
+            </Button>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Image src="/images/white-label-meets-1.png" width={550} height={452} />
+          </Grid>
+        </Grid>
 
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
+        <Grid container alignItems="center" justifyContent="center" spacing={20} style={{ marginTop: 50 }} >
+          <Grid item xs={12} md={4}>
+            <Image src="/images/meetszap-1.png" width={348} height={298} />
+          </Grid>
+          <Grid item xs={12} md={8}>
+            <Typography variant="h3" style={{ marginBottom: 25 }} >
+              Novo! Whatsapp para empresas:
+              Um número, vários atendentes.
+            </Typography>
+            <Typography variant="body1" style={{ marginBottom: 25 }} >
+              Concentre todos os atendimentos do Whatsapp num único lugar totalmente integrado. Realize seus atendimentos do WhatsApp e Facebook diretamente pelo Meets aproveitando toda a inteligência de um dos melhores CRM’s do Brasil.
+            </Typography>
+            <Button variant="outlined" color="primary" >
+              SAIBA MAIS
+            </Button>
+          </Grid>
+        </Grid>
 
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+        <Grid container justifyContent="center" spacing={20} style={{ marginTop: 50, paddingBottom: 100 }} >
+          <Grid item xs={12} style={{ textAlign: 'center', padding: 25 }} >
+            <Typography variant="h3">Funcionalidades</Typography>
+            <Typography variant="body1">Conheça mais sobre o Meets CRM</Typography>
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <Card
+              src="/images/oportunidades_1.png"
+              title="Oportunidades"
+              text="Conheça como gerir suas oportunidades de Vendas e Negócios de uma forma simples, rápida e organizada."
+            />
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <Card
+              src="/images/atendimento_1.png"
+              title="Atendimento"
+              text="Tenha maior controle sobre suas propostas e nunca mais esqueça o que você tratou da última vez que falou com o seu cliente."
+            />
 
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <Card
+              src="/images/atividade-1.png"
+              title="Atividades"
+              text="Gerencie as atividades e lembretes para facilitar o seu trabalho diário e de sua equipe. Seja lembrado pelo Meets através de e-mails e notificações no seu celular."
+            />
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <Card
+              src="/images/funil_1.png"
+              title="Funil de Vendas"
+              text="Aumente seus resultados criando múltiplos funis de atendimento e vendas. Organize de forma padrão para você e sua equipe."
+            />
+          </Grid>
+        </Grid>
 
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
+        <Grid item xs={12} style={{ textAlign: 'center' }}>
+          <Image src="/images/meets-dashboard-1-1024x583.png" width={1232} height={750} />
+        </Grid>
 
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
-        </a>
-      </footer>
-
-      <style jsx>{`
-        .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer img {
-          margin-left: 0.5rem;
-        }
-
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        .title a {
-          color: #0070f3;
-          text-decoration: none;
-        }
-
-        .title a:hover,
-        .title a:focus,
-        .title a:active {
-          text-decoration: underline;
-        }
-
-        .title {
-          margin: 0;
-          line-height: 1.15;
-          font-size: 4rem;
-        }
-
-        .title,
-        .description {
-          text-align: center;
-        }
-
-        .description {
-          line-height: 1.5;
-          font-size: 1.5rem;
-        }
-
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-
-        .grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
-
-          max-width: 800px;
-          margin-top: 3rem;
-        }
-
-        .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1.5rem;
-          text-align: left;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
-          border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
-        }
-
-        .card:hover,
-        .card:focus,
-        .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
-        }
-
-        .card h3 {
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
-        }
-
-        .card p {
-          margin: 0;
-          font-size: 1.25rem;
-          line-height: 1.5;
-        }
-
-        .logo {
-          height: 1em;
-        }
-
-        @media (max-width: 600px) {
-          .grid {
-            width: 100%;
-            flex-direction: column;
-          }
-        }
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
-    </div>
+        <Grid container alignItems="center" justifyContent="center" spacing={20} style={{ marginTop: 50 }} >
+          <Grid item xs={12} md={6}>
+            <Image src="/images/mockup.png" width={436} height={361} />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Typography variant="h2" style={{ marginBottom: 25 }} >
+              Leve o Meets aonde você for
+            </Typography>
+            <Typography variant="body1" style={{ marginBottom: 25 }} >
+              Mobilidade, controle e informações na palma de sua mão. Baixe agora mesmo o nosso aplicativo e tenha seus dados sempre em mãos. Versão para iOS e Android.
+            </Typography>
+            <Grid item>
+              <Image src="/images/android-download-png.png" width={144} height={42} />
+              <Image src="/images/download_AppleStore.png" width={144} height={42} />
+            </Grid>
+          </Grid>
+        </Grid>
+      </Container>
+    </Fragment >
   )
 }
