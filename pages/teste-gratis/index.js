@@ -250,7 +250,7 @@ export default function TesteGratis() {
 
                 </div>
               </Grid>
-              <Grid item={12} sm={4} style={{ textAlign: 'center' }}>
+              <Grid item xs={12} sm={4} style={{ textAlign: 'center' }}>
                 <Checkbox
                   checked={aceito}
                   onChange={() => setAceito(!aceito)}
