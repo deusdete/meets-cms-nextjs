@@ -61,7 +61,6 @@ export default function Home() {
 
   return (
     <Fragment>
-      <CssBaseline />
       <AppBar position="static" color="default" elevation={0} className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
 

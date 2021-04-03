@@ -52,7 +52,6 @@ export default function SignIn() {
 
   return (
     <Container component="main" maxWidth="xs">
-      <CssBaseline />
       <div className={classes.paper}>
          <Image src="/logo/meets.png" height={30} width={100} className={classes.avatar} />
         <form className={classes.form} noValidate>
