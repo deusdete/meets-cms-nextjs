@@ -118,6 +118,10 @@ export default function TesteGratis() {
       setEnviado(false)
     }).catch(err => {
       console.log(err)
+      setErrorMensagem({
+        info: "Falha ao criar seu cadastro"
+      })
+      setEnviado(false)
     })
   }
 
@@ -168,6 +172,9 @@ export default function TesteGratis() {
         ) :
           (<Paper elevation={1} className={classes.form}>
             <Grid container className={classes.row} spacing={2}>
+            <Grid item xs={12}>
+              {errorMensagem &&  errorMensagem.info && <Typography variant="body2" color="error">{errorMensagem.info}</Typography>}
+            </Grid>
               <Grid item xs={12} sm={6} md={4}>
                 <FormControl fullWidth>
                   <TextField

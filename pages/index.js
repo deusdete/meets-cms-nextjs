@@ -90,7 +90,7 @@ export default function Home() {
         </Toolbar>
       </AppBar>
       <Container maxWidth="lg" >
-        <Grid container alignItems="center" justifyContent="center" spacing={20} style={{ marginTop: 50 }} >
+        <Grid container alignItems="center" justifyContent="center" spacing={5} style={{ marginTop: 50 }} >
           <Grid item xs={12} md={6}>
             <Typography variant="h3" style={{ marginBottom: 25 }} >
               Simplifique e aumente suas vendas com Meets CRM
@@ -107,7 +107,7 @@ export default function Home() {
           </Grid>
         </Grid>
 
-        <Grid container alignItems="center" justifyContent="center" spacing={20} style={{ marginTop: 50 }} >
+        <Grid container alignItems="center" justifyContent="center" spacing={5} style={{ marginTop: 50 }} >
           <Grid item xs={12} md={4}>
             <Image src="/images/meetszap-1.png" width={348} height={298} />
           </Grid>
@@ -125,7 +125,7 @@ export default function Home() {
           </Grid>
         </Grid>
 
-        <Grid container justifyContent="center" spacing={20} style={{ marginTop: 50, paddingBottom: 100 }} >
+        <Grid container justifyContent="center" spacing={5} style={{ marginTop: 50, paddingBottom: 100 }} >
           <Grid item xs={12} style={{ textAlign: 'center', padding: 25 }} >
             <Typography variant="h3">Funcionalidades</Typography>
             <Typography variant="body1">Conheça mais sobre o Meets CRM</Typography>
@@ -166,7 +166,7 @@ export default function Home() {
           <Image src="/images/meets-dashboard-1-1024x583.png" width={1232} height={750} />
         </Grid>
 
-        <Grid container alignItems="center" justifyContent="center" spacing={20} style={{ marginTop: 50 }} >
+        <Grid container alignItems="center" justifyContent="center" spacing={5} style={{ marginTop: 50 }} >
           <Grid item xs={12} md={6}>
             <Image src="/images/mockup.png" width={436} height={361} />
           </Grid>

@@ -72,7 +72,7 @@ export default function SignIn() {
     setErrorMensagem('');
 
     api.post('/auth', { email, senha }).then(res => {
-      console.log(res.data)
+
       const { error, token } = res.data;
 
       if (error) {
@@ -87,6 +87,8 @@ export default function SignIn() {
       setEnviado(false)
 
     }).catch(err => {
+      setErrorMensagem('Servidor temporariamente indisponível')
+      setEnviado(false)
       console.log(err)
     })
   }
